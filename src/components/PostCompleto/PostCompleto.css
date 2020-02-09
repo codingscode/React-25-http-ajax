@@ -1,0 +1,38 @@
+.PostCompleto {
+    width: 80%;
+    margin: 20px auto;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 3px #ccc;
+    text-align: center;
+}
+
+.Editar {
+
+}
+
+.Editar label {
+    display: block;
+    color: grey;
+}
+
+.Editar button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    color: #fa923f;
+}
+
+.Editar button:hover,
+.Editar button:active {
+    color: #521751;
+}
+
+.Editar button.Apagar {
+    color: red;
+}
+
+.Editar button.Apagar:hover,
+.Editar button.Apagar:active {
+    color: darkred;
+}
