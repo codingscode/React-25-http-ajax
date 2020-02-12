@@ -7,20 +7,27 @@ import NovoPost from '../../components/NovoPost/NovoPost';
 import './Blog.css';
 
 class Blog extends Component {
+    state = {
+        posts: []
+    }
+
     componentDidMount() {
-        axios.get('https://jsonplaceholder.typicode.com/posts')
+        axios.get('https://jsonplaceholder.typicode.com/posts')  //C://Pib//Backup//Arquivo pessoal//TI//Minha Programação//INGLES//linguagem//javascript//Curso React//pasta25 React httpajax//posts.json  
            .then(resposta => {
-              console.log(resposta)
+              this.setState({posts: resposta.data})
+              //console.log(resposta)
            })
     }
     
     render () {
+        const posts = this.state.posts.map(post => {
+            return <Post key={post.id} title={post.title}/>
+        })
+
         return (
             <div>
                 <section className="Posts">
-                    <Post />
-                    <Post />
-                    <Post />
+                    {posts}
                 </section>
                 <section>
                     <PostCompleto />
