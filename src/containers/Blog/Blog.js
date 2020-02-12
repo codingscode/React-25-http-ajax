@@ -14,14 +14,21 @@ class Blog extends Component {
     componentDidMount() {
         axios.get('https://jsonplaceholder.typicode.com/posts')  //C://Pib//Backup//Arquivo pessoal//TI//Minha Programação//INGLES//linguagem//javascript//Curso React//pasta25 React httpajax//posts.json  
            .then(resposta => {
-              this.setState({posts: resposta.data})
+              const posts = resposta.data.slice(0, 4)
+              const postsAtualizados = posts.map(post => {
+                return {
+                    ...post,
+                    author: 'Max'
+                }
+              })
+              this.setState({posts: postsAtualizados})
               //console.log(resposta)
            })
     }
     
     render () {
         const posts = this.state.posts.map(post => {
-            return <Post key={post.id} title={post.title}/>
+            return <Post key={post.id} title={post.title} author={post.author} />
         })
 
         return (
