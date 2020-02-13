@@ -21,6 +21,13 @@ class PostCompleto extends Component {
         }
     }
 
+    gerenPostapagar = () => {
+        axios.delete(`http://localhost:8081/posts/${this.props.id}`)
+           .then(resposta => {
+              console.log(resposta)
+           })
+    }
+
     render () {
         let post = <p style={{textAlign: 'center'}}>Por favor selecione um Post !</p>;
         if (this.props.id) {
@@ -33,7 +40,7 @@ class PostCompleto extends Component {
                     <h1>{this.state.postCarregado.titulo}</h1>
                     <p>{this.state.postCarregado.body}</p>
                     <div className="Editar">
-                        <button className="Apagar">Apagar</button>
+                        <button onClick={this.gerenPostapagar} className="Apagar">Apagar</button>
                     </div>
                 </div>
 
