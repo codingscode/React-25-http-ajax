@@ -1,0 +1,17 @@
+{
+  "name": "servidor",
+  "version": "1.0.0",
+  "description": "serv",
+  "main": "arquivo.json",
+  "scripts": {
+    "start": "json-server -p 8081 arquivo.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "json-server": ""
+  },
+  "jest": {
+    "testURL": "http://localhost/8081"
+  }
+}
