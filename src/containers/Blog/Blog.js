@@ -19,7 +19,7 @@ class Blog extends Component {
               const postsAtualizados = posts.map(post => {
                 return {
                     ...post,
-                    author: 'Max'
+                    autor: 'Max'
                 }
               })
               this.setState({posts: postsAtualizados})
@@ -33,7 +33,7 @@ class Blog extends Component {
 
     render () {
         const posts = this.state.posts.map(post => {
-            return <Post key={post.id} titulo={post.titulo} author={post.author} clicado={() => this.gerenpostSelecionado(post.id)} />
+            return <Post key={post.id} titulo={post.titulo} autor={post.autor} clicado={() => this.gerenpostSelecionado(post.id)} />
         })
 
         return (
