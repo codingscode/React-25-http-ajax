@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 
 import './NovoPost.css';
 
@@ -8,6 +9,18 @@ class NovoPost extends Component {
         conteudo: '',
         autor: 'Max'
     }
+
+    gerenPostdado = () => {
+        const dado = {
+           titulo: this.state.titulo,
+           body: this.state.conteudo,
+           autor: this.state.autor
+        }
+        axios.post(`http://localhost:8081/posts`, dado)
+           .then(resposta => {
+              console.log(resposta)
+           })
+     }
 
     render () {
         return (
@@ -22,7 +35,7 @@ class NovoPost extends Component {
                     <option value="Max">Max</option>
                     <option value="Manu">Manu</option>
                 </select>
-                <button>Add Post</button>
+                <button onClick={this.gerenPostdado} >Add Post</button>
             </div>
         );
     }
