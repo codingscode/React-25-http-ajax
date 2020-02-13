@@ -9,7 +9,8 @@ import './Blog.css';
 class Blog extends Component {
     state = {
         posts: [],
-        postIdSelecionado: null
+        postIdSelecionado: null,
+        erro: false
     }
 
     componentDidMount() {
@@ -25,6 +26,10 @@ class Blog extends Component {
               this.setState({posts: postsAtualizados})
               //console.log(resposta)
            })
+           .catch(erro => {
+               //console.log(erro)
+               this.setState({erro: true})
+           })
     }
     
     gerenpostSelecionado = (id) => {
@@ -32,9 +37,12 @@ class Blog extends Component {
     }
 
     render () {
-        const posts = this.state.posts.map(post => {
-            return <Post key={post.id} titulo={post.titulo} autor={post.autor} clicado={() => this.gerenpostSelecionado(post.id)} />
-        })
+        let posts = <p style={{textAlign: 'center'}}>Algo deu errado!</p>
+        if(!this.state.erro) {
+            posts = this.state.posts.map(post => {
+                return <Post key={post.id} titulo={post.titulo} autor={post.autor} clicado={() => this.gerenpostSelecionado(post.id)} />
+            })
+        }
 
         return (
             <div>
