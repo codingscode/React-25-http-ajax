@@ -11,7 +11,7 @@ class PostCompleto extends Component {
     componentDidUpdate() {
         if(this.props.id) {
            if (!this.state.postCarregado || (this.state.postCarregado && this.state.postCarregado.id !== this.props.id)) {
-            axios.get(`http://localhost:8081/posts/${this.props.id}`)
+            axios.get(`/posts/${this.props.id}`)
             .then(resposta => {
                //console.log(resposta)
                this.setState({postCarregado: resposta.data})
@@ -22,7 +22,7 @@ class PostCompleto extends Component {
     }
 
     gerenPostapagar = () => {
-        axios.delete(`http://localhost:8081/posts/${this.props.id}`)
+        axios.delete(`/posts/${this.props.id}`)
            .then(resposta => {
               console.log(resposta)
            })

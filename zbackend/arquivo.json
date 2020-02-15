@@ -605,6 +605,12 @@
       "body": "Isto é um novo post",
       "autor": "Manu",
       "id": 102
+    },
+    {
+      "titulo": "Outro post",
+      "body": "isto aqui é outro post",
+      "autor": "Manu",
+      "id": 103
     }
   ]
 }

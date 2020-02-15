@@ -16,7 +16,7 @@ class NovoPost extends Component {
            body: this.state.conteudo,
            autor: this.state.autor
         }
-        axios.post(`http://localhost:8081/posts`, dado)
+        axios.post(`/posts`, dado)
            .then(resposta => {
               console.log(resposta)
            })
