@@ -599,6 +599,12 @@
       "body": "isto é um teste",
       "autor": "Max",
       "id": 101
+    },
+    {
+      "titulo": "Adicionando Post",
+      "body": "Isto é um novo post",
+      "autor": "Manu",
+      "id": 102
     }
   ]
 }
