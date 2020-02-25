@@ -20,12 +20,6 @@
     },
     {
       "usuarioId": 1,
-      "id": 5,
-      "titulo": "nesciunt quas odio",
-      "body": "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque"
-    },
-    {
-      "usuarioId": 1,
       "id": 6,
       "titulo": "dolorem eum magni eos aperiam quia",
       "body": "ut aspernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis et ea nemo ab reprehenderit accusantium quas\nvoluptate dolores velit et doloremque molestiae"
@@ -617,6 +611,12 @@
       "body": "Juçara não é Açai, a mídia mente",
       "autor": "Manu",
       "id": 104
+    },
+    {
+      "titulo": "Fazendo outro teste",
+      "body": "testando ...",
+      "autor": "Manu",
+      "id": 105
     }
   ]
 }
