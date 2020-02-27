@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Route} from 'react-router-dom'
 
 import './Blog.css';
 import Posts from '../../components/Posts/Posts'
@@ -16,10 +17,11 @@ class Blog extends Component {
                         </ul>
                     </nav>
                 </header>
-                <Posts />
+            <Route path="/" exact render={() => <h1>Home</h1>} />  
+            <Route path="/" render={() => <h1>Home 2</h1>} />  
             </div>
         );
     }
 }
 
-export default Blog;
+export default Blog; //aparece http://localhost:3000/novo-post
