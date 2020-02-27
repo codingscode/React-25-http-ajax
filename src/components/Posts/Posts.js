@@ -11,6 +11,7 @@ class Posts extends Component {
     }
 
     componentDidMount() {
+        console.log(this.props)
         axios.get('/posts/')  //https://jsonplaceholder.typicode.com/posts
            .then(resposta => {
               const posts = resposta.data.slice(0, 4)

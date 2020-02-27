@@ -10,6 +10,10 @@ class NovoPost extends Component {
         autor: 'Max'
     }
 
+    componentDidMount() {
+        console.log(this.props)
+    }
+
     gerenPostdado = () => {
         const dado = {
            titulo: this.state.titulo,
@@ -41,4 +45,4 @@ class NovoPost extends Component {
     }
 }
 
-export default NovoPost;
+export default NovoPost; //http://localhost:3000/novo-post/2?quick-submit=true#submit ver
