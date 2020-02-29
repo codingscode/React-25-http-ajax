@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from '../../axios'
+import {Link} from 'react-router-dom'
 
 import Post from '../Post/Post'
 import './Posts.css'
@@ -38,9 +39,10 @@ class Posts extends Component {
        let posts = <p style={{textAlign: 'center'}}>Algo deu errado!</p>
        if(!this.state.erro) {
            posts = this.state.posts.map(post => {
-               return <Post key={post.id} titulo={post.titulo}
-                     autor={post.autor}  
-                     clicado={() => this.gerenpostSelecionado(post.id)} />
+               return (<Link to={`/${post.id}`} key={post.id}> 
+                            <Post titulo={post.titulo} autor={post.autor}  
+                            clicado={() => this.gerenpostSelecionado(post.id)} />
+                     </Link>)
            })
        }
 
