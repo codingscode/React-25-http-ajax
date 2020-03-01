@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import axios from '../../axios'
-import {Link} from 'react-router-dom'
 
 import Post from '../Post/Post'
 import './Posts.css'
@@ -32,17 +31,18 @@ class Posts extends Component {
     }
 
     gerenpostSelecionado = (id) => {
-        this.setState({postIdSelecionado: id})
+        //this.setState({postIdSelecionado: id})
+        this.props.history.push({pathname: '/posts/' + id})
     }
 
     render() {
        let posts = <p style={{textAlign: 'center'}}>Algo deu errado!</p>
        if(!this.state.erro) {
            posts = this.state.posts.map(post => {
-               return (<Link to={`/posts/${post.id}`} key={post.id}> 
-                            <Post titulo={post.titulo} autor={post.autor}  
+               return (//<Link to={`/posts${post.id}`} >
+                            <Post key={post.id} titulo={post.titulo} autor={post.autor}  
                             clicado={() => this.gerenpostSelecionado(post.id)} />
-                     </Link>)
+                     /*</Link>*/)
            })
        }
 
