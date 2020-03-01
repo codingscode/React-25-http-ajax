@@ -8,10 +8,11 @@ class PostCompleto extends Component {
         postCarregado: null
     }
 
-    componentDidUpdate() {
-        if(this.props.id) {
+    componentDidMount() {
+        console.log(this.props)
+        if(this.props.match.params.id) {
            if (!this.state.postCarregado || (this.state.postCarregado && this.state.postCarregado.id !== this.props.id)) {
-            axios.get(`/posts/${this.props.id}`)
+            axios.get(`/posts/${this.props.match.params.id}`)
             .then(resposta => {
                //console.log(resposta)
                this.setState({postCarregado: resposta.data})
