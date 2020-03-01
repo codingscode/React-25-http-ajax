@@ -39,7 +39,7 @@ class Posts extends Component {
        let posts = <p style={{textAlign: 'center'}}>Algo deu errado!</p>
        if(!this.state.erro) {
            posts = this.state.posts.map(post => {
-               return (<Link to={`/${post.id}`} key={post.id}> 
+               return (<Link to={`/posts/${post.id}`} key={post.id}> 
                             <Post titulo={post.titulo} autor={post.autor}  
                             clicado={() => this.gerenpostSelecionado(post.id)} />
                      </Link>)
