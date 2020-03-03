@@ -10,20 +10,28 @@ class PostCompleto extends Component {
 
     componentDidMount() {
         console.log(this.props)
+        this.carregarDado()
+    }
+
+    componentDidUpdate() {
+        this.carregarDado()
+    }
+
+    carregarDado() {
         if(this.props.match.params.id) {
-           if (!this.state.postCarregado || (this.state.postCarregado && this.state.postCarregado.id !== this.props.match.params.id)) {
-            axios.get('/posts/'+ this.props.match.params.id)
-                .then(resposta => {
-                    //console.log(resposta)
-                    this.setState({postCarregado: resposta.data})
-                }) 
-           }
-           
+            if (!this.state.postCarregado || (this.state.postCarregado && this.state.postCarregado.id !== +this.props.match.params.id)) {
+             axios.get('/posts/'+ this.props.match.params.id)
+                 .then(resposta => {
+                     //console.log(resposta)
+                     this.setState({postCarregado: resposta.data})
+                 }) 
+            }
+            
         }
     }
 
     gerenPostapagar = () => {
-        axios.delete(`/posts/${this.props.id}`)
+        axios.delete(`/posts/${this.props.match.params.id}`)
            .then(resposta => {
               console.log(resposta)
            })
