@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+import axios from '../../axios'
 
 import './PostCompleto.css';
 
@@ -11,12 +11,12 @@ class PostCompleto extends Component {
     componentDidMount() {
         console.log(this.props)
         if(this.props.match.params.id) {
-           if (!this.state.postCarregado || (this.state.postCarregado && this.state.postCarregado.id !== this.props.id)) {
-            axios.get(`/posts/${this.props.match.params.id}`)
-            .then(resposta => {
-               //console.log(resposta)
-               this.setState({postCarregado: resposta.data})
-             }) 
+           if (!this.state.postCarregado || (this.state.postCarregado && this.state.postCarregado.id !== this.props.match.params.id)) {
+            axios.get('/posts/'+ this.props.match.params.id)
+                .then(resposta => {
+                    //console.log(resposta)
+                    this.setState({postCarregado: resposta.data})
+                }) 
            }
            
         }
@@ -31,7 +31,7 @@ class PostCompleto extends Component {
 
     render () {
         let post = <p style={{textAlign: 'center'}}>Por favor selecione um Post !</p>;
-        if (this.props.id) {
+        if (this.props.match.params.id) {
             post = <p style={{textAlign: 'center'}}>Carregando..... !</p>;
         }
 

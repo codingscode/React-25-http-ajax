@@ -32,17 +32,17 @@ class Posts extends Component {
 
     gerenpostSelecionado = (id) => {
         //this.setState({postIdSelecionado: id})
-        this.props.history.push({pathname: '/posts/' + id})
+        this.props.history.push('/' + id)
     }
 
     render() {
        let posts = <p style={{textAlign: 'center'}}>Algo deu errado!</p>
        if(!this.state.erro) {
            posts = this.state.posts.map(post => {
-               return (//<Link to={`/posts${post.id}`} >
+               return (
                             <Post key={post.id} titulo={post.titulo} autor={post.autor}  
                             clicado={() => this.gerenpostSelecionado(post.id)} />
-                     /*</Link>*/)
+                     )
            })
        }
 
