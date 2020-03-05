@@ -2,12 +2,6 @@
   "posts": [
     {
       "usuarioId": 1,
-      "id": 1,
-      "titulo": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-      "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
-    },
-    {
-      "usuarioId": 1,
       "id": 2,
       "titulo": "qui est esse",
       "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
@@ -23,12 +17,6 @@
       "id": 6,
       "titulo": "dolorem eum magni eos aperiam quia",
       "body": "ut aspernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis et ea nemo ab reprehenderit accusantium quas\nvoluptate dolores velit et doloremque molestiae"
-    },
-    {
-      "usuarioId": 1,
-      "id": 7,
-      "titulo": "magnam facilis autem",
-      "body": "dolore placeat quibusdam ea quo vitae\nmagni quis enim qui quis quo nemo aut saepe\nquidem repellat excepturi ut quia\nsunt ut sequi eos ea sed quas"
     },
     {
       "usuarioId": 1,
