@@ -30,8 +30,9 @@ class Blog extends Component {
                 </header>
             <Switch>
                     {this.state.autent ? <Route path="/novo-post" component={NovoPost} /> : null}
-                    <Route path="/posts" component={Posts} /> 
-                    < Redirect from="/" to="/posts" />
+                    <Route path="/posts" component={Posts} />
+                    <Route render={() => <h1>Não encontrado</h1>} /> 
+                    {/*< Redirect from="/" to="/posts" /> */}
                     {/*<Route path="/" component={Posts} />*/} 
             </Switch>
             </div>
