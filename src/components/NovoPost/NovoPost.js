@@ -25,7 +25,8 @@ class NovoPost extends Component {
         axios.post(`/posts`, dado)
            .then(resposta => {
               console.log(resposta)
-              this.setState({submetido: true})
+              this.props.history.replace('/posts')
+              //this.setState({submetido: true})
            })
      }
 
