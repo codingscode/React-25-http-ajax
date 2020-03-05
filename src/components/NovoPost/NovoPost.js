@@ -13,6 +13,7 @@ class NovoPost extends Component {
     }
 
     componentDidMount() {
+        //this.props.history.replace('/posts')
         console.log(this.props)
     }
 
