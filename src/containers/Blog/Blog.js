@@ -3,11 +3,17 @@ import {Route, NavLink, Switch, Redirect} from 'react-router-dom'
 
 import './Blog.css';
 import Posts from '../../components/Posts/Posts'
-import NovoPost from '../../components/NovoPost/NovoPost'
+import asyncComponent from '../../hoc/asyncComponent'
+
+//import NovoPost from '../../components/NovoPost/NovoPost'
+const AsyncNovoPost = asyncComponent(() => {
+    return import('../../components/NovoPost/NovoPost')
+})
+
 
 class Blog extends Component {
     state = {
-        autent: false
+        autent: true
     }
 
     render () {
@@ -29,7 +35,7 @@ class Blog extends Component {
                     </nav>
                 </header>
             <Switch>
-                    {this.state.autent ? <Route path="/novo-post" component={NovoPost} /> : null}
+                    {this.state.autent ? <Route path="/novo-post" component={AsyncNovoPost} /> : null}
                     <Route path="/posts" component={Posts} />
                     <Route render={() => <h1>Não encontrado</h1>} /> 
                     {/*< Redirect from="/" to="/posts" /> */}
